@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; 
 
-function App() {
+const Button = ({ text, onClick }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <button onClick={onClick}>
+      {text}
+    </button>
+  );
+};
+
+
+const App = () => {
+  const handleButtonClick = () => {
+    console.log('Кнопка нажата!');
+  };
+
+  return (
+    <div>
+      <h1>Повторно используемый компонент</h1>
+      <Button text="Нажмите здесь" onClick={handleButtonClick} />
     </div>
   );
-}
+};
 
 export default App;
+
